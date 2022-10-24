@@ -8,7 +8,7 @@
 START_TEST(test_multiply_overflow)
 {
     int32_t num1 = INT32_MAX;
-    int32_t num2 = INT32_MAX;
+    int32_t num2 = 2;
     ck_assert_int_eq(-1, multiply(num1, num2));
 }END_TEST
 
@@ -23,7 +23,7 @@ START_TEST(test_multiply_zeroes)
 {
     int32_t num1 = 0;
     int32_t num2 = 0;
-    ck_assert_int_eq(0, multiply(num1, num2));
+    ck_assert_int_eq(-1, multiply(num1, num2));
 }END_TEST
 
 START_TEST(test_multiply_zero_by_positive)
@@ -58,7 +58,7 @@ START_TEST(test_multiply_positives)
 {
     int32_t num1 = 5;
     int32_t num2 = 5;
-    ck_assert_int_eq(-342, multiply(num1, num2));
+    ck_assert_int_eq(25, multiply(num1, num2));
 }END_TEST
 
 
