@@ -50,7 +50,7 @@ int32_t subtract(int32_t num_1, int32_t num_2)
     int32_t lesser = find_smaller(num_1, num_2);
     int32_t greater = find_greater(num_1, num_2);
     int32_t quotient = num_1 - num_2;
-    if (true == check_both_positive(num_1, num_2) && quotient > lesser)
+    if (true == check_both_positive(num_1, num_2) && quotient + num_2 != num_1)
     {   
         fprintf(stderr, "Overflow occured.\n");
         return -1;
@@ -95,20 +95,31 @@ int32_t divide(int32_t num_1, int32_t num_2)
     {
         fprintf(stderr, "Division with 0.\n");
         quotient = -1;
+        goto EXIT;
+    } else {
+        quotient = num_1 / num_2;
     }
-    quotient = num_1 / num_2;
-    if (num_1 != quotient * num_2)
+    if (num_1 != quotient * num_2 && 0 != quotient)
     {
         fprintf(stderr, "Divide has experienced overflow.\n");
         quotient = -1;
+        goto EXIT;
     }
-    return quotient;
+    
+    EXIT:
+        return quotient;
 }
 int32_t modulo(int32_t num_1, int32_t num_2)
 {
-    if ((INT32_MAX < num_1 || INT32_MAX < num_2) || (INT32_MIN > num_1 || INT32_MIN > num_2))
-    {   
-        fprintf(stderr, "Overflow occured.\n");
-        return -1;
+    int32_t remainder = 0;
+    if (check_for_zeroes(num_1, num_2))
+    {
+        fprintf(stderr, "Modulo with 0.\n");
+        remainder = -1;
+    } else
+    {
+        remainder = num_1 % num_2;
     }
+    
+    return remainder;
 }
