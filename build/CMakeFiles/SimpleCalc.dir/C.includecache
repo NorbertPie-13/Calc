@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mnpie6154/Desktop/Calc/includes/operands.h
+stdint.h
+-
+
+/home/mnpie6154/Desktop/Calc/src/operands.c
+limits.h
+-
+stdio.h
+-
+stdbool.h
+-
+../includes/operands.h
+/home/mnpie6154/Desktop/Calc/includes/operands.h
+
