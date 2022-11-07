@@ -48,12 +48,13 @@ int32_t multiply(int32_t num_1, int32_t num_2)
         fprintf(stderr, "Multiplcation with 0.\n");
         product = -1;
     }
+    if (num_1 > INT32_MAX || num_2 > INT32_MAX)
+    {
+        fprintf(stderr, "Number too large for int32.\n");
+        return -1;
+    }
     product = num_1 * num_2;
-    if (check_both_positive(num_1, num_2) && 0 > product)
-    {   
-        fprintf(stderr, "Overflow with two positives.\n");
-        product = -1;
-    } else if (check_both_negative(num_1, num_2) && 0 > product)
+    if (check_both_negative(num_1, num_2) && 0 > product)
     {
         fprintf(stderr, "Overflow with two negatives.\n");
         product = -1;
@@ -62,6 +63,11 @@ int32_t multiply(int32_t num_1, int32_t num_2)
     {
         fprintf(stderr, "Underflow occured.\n");
         product = -1;
+    }
+    if (product / num_2 != num_1)
+    {
+        fprintf(stderr, "Overflow occured.\n");
+        return -1;
     }
     
     return product;
@@ -73,7 +79,7 @@ int32_t divide(int32_t num_1, int32_t num_2)
     {
         fprintf(stderr, "Division with 0.\n");
         quotient = -1;
-        return quotient
+        return quotient;
     }
     quotient = num_1 / num_2;
     return quotient;

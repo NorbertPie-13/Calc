@@ -1,5 +1,7 @@
 #ifndef COMMON_H
 #define COMMON_H
+#include <stdint.h>
+#include <stdbool.h>
 
 
 bool check_both_positive(int32_t num_1, int32_t num_2);

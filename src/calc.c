@@ -2,12 +2,20 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../includes/operands.h"
+#include "../includes/binary_operands.h"
 
 int32_t evaluate_equation(int32_t (*function)(int32_t, int32_t), int32_t num_1, int32_t num_2)
 {
     int32_t result = (*function)(num_1, num_2);
     return result;
 }
+
+uint32_t evaluate_binary(uint32_t (*function)(int32_t, int32_t), int32_t num_1, int32_t num_2)
+{
+    uint32_t result = (*function)(num_1, num_2);
+    return result;
+}
+
 
 int main(int argc, char ** argv)
 {
@@ -53,8 +61,15 @@ int main(int argc, char ** argv)
         {
             printf("%d %% %d = %d\n", num_1, num_2, evaluate_equation(modulo, num_1, num_2));
         }
-        
         break; 
+    
+    case 'x':
+        printf("%d * %d = %d\n", num_1, num_2, evaluate_equation(multiply, num_1, num_2));
+        break;
+
+    case '&':
+        printf("%d & %d = %d\n", num_1, num_2, evaluate_binary(and, num_1, num_2));
+        break;
     default:
         printf("Invalid Operand. %c\n", operand);
         break;

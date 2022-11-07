@@ -1,5 +1,6 @@
 #include "../includes/binary_operands.h"
 #include "../includes/common.h"
+#include <stdio.h>
 #include <stdint.h>
 #include <limits.h>
 
@@ -14,7 +15,7 @@ uint32_t shift_left(int32_t number, int32_t placement)
         return UINT32_MAX;
     }
 
-    uint32_t result = number << placement
+    uint32_t result = number << placement;
     return result;
 
 }
@@ -27,7 +28,7 @@ uint32_t shift_right(int32_t number, int32_t placement)
         return UINT32_MAX;
     }
 
-    uint32_t result = number >> placement
+    uint32_t result = number >> placement;
     return result;
 
 }
@@ -65,7 +66,7 @@ uint32_t xor(int32_t num_1, int32_t num_2)
     return result;
 }
 
-uint32_t rotate_left(int32_t, int32_t)
+uint32_t rotate_left(int32_t num_1, int32_t num_2)
 {
      if (check_for_zero(num_1, num_2))
     {
@@ -77,7 +78,7 @@ uint32_t rotate_left(int32_t, int32_t)
     return result;
 }
 
-uint32_t rotate_right(int32_t, int32_t)
+uint32_t rotate_right(int32_t num_1, int32_t num_2)
 {
      if (check_for_zero(num_1, num_2))
     {
