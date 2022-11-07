@@ -8,7 +8,7 @@ project(SimpleCalc)
 
 # TODO 6: Set the variable CMAKE_CXX_STANDARD to 11
 #         and the variable CMAKE_CXX_STANDARD_REQUIRED to True
-set(SOURCES ../src/calc.c ../src/operands.c)
+set(SOURCES ../src/calc.c ../src/operands.c ../src/common.c ../src/binary_operands.c)
 
 
 # TODO 8: Use configure_file to configure and copy TutorialConfig.h.in to

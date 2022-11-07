@@ -27,7 +27,7 @@ int32_t find_greater(int32_t num_1, int32_t num_2)
     return num_1 > num_2 ? num_1 : num_2;
 }
 
-bool check_for_zero(int32_t num_1, int32_t num_2)
+bool check_for_zero(int32_t num)
 {
-    return (0 == num_2) ? true : false;
+    return (0 == num) ? true : false;
 }

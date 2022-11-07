@@ -43,7 +43,7 @@ int32_t subtract(int32_t num_1, int32_t num_2)
 int32_t multiply(int32_t num_1, int32_t num_2)
 {
     int32_t product = 0;
-    if (check_for_zero(num_1, num_2))
+    if (check_for_zero(num_2))
     {
         fprintf(stderr, "Multiplcation with 0.\n");
         product = -1;
@@ -75,7 +75,7 @@ int32_t multiply(int32_t num_1, int32_t num_2)
 int32_t divide(int32_t num_1, int32_t num_2)
 {   
     int32_t quotient = 0;
-    if (check_for_zero(num_1, num_2))
+    if (check_for_zero(num_2))
     {
         fprintf(stderr, "Division with 0.\n");
         quotient = -1;
@@ -86,7 +86,7 @@ int32_t divide(int32_t num_1, int32_t num_2)
 }
 int32_t modulo(int32_t num_1, int32_t num_2)
 {
-    if (check_for_zero)
+    if (check_for_zero(num_2))
     {
         fprintf(stderr, "Modulo with 0.\n");
         return -1;

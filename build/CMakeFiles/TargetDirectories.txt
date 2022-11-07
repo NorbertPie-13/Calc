@@ -1,3 +1,0 @@
-/home/mnpie6154/Desktop/Calc/build/CMakeFiles/rebuild_cache.dir
-/home/mnpie6154/Desktop/Calc/build/CMakeFiles/edit_cache.dir
-/home/mnpie6154/Desktop/Calc/build/CMakeFiles/SimpleCalc.dir
